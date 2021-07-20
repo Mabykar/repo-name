@@ -14,102 +14,73 @@ body{
    }
 	</style>
 	<style>
-@import url(https://fonts.googleapis.com/css?family=Lora);
-body {margin:0;}
-h2 {
-  font-family: monospace;
-  color: #606060;
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption');
+.menu-main {
+  list-style: none;
+  padding: 0 30px;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  background: white;
 }
-ul {
-  list-style: none; 
-  margin: 0 auto;
+.menu-main:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  bottom: -20px;
+  background: radial-gradient(white 0%, white 70%, rgba(255,255,255,0) 70%, rgba(255,255,255,0) 100%) 0 -10px;
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
 }
-a {
+.menu-main li {display: inline-block;}
+.menu-main a {
   text-decoration: none;
-  font-family: 'Lora', serif;
-  transition: .5s linear;
-}
-i {
-  margin-right: 10px;
-}
-nav {
-  display: block;
-  width: 660px;
-  margin: 0 auto 30px;
-}
-.one ul {
-  padding: 1em 0;
-  background: #ECDAD6;
-}
-.one a {
-  padding: 1em;
-  background: rgba(177, 152, 145, .3);
-  border-right: 1px solid #b19891;
-  color: #695753;
-}
-.one a:hover {background: #b19891;}
-.one li {
-  display: inline;
-}
-.two ul {
-  background: #D4E7EE;
-  overflow: hidden;
-  padding: 0;
-}
-.two li {
-  float: left;
-}
-.two a {
-  display: block;
-  padding: 1em;
-  border-right: 1px solid #ADC0CE;
-  background: rgba(173, 192, 206, .3);
-  color: #29838C;
-}
-.two a:hover {background: #ADC0CE}
-.three ul {
-  padding: 0;
-  background: #E4EFD1;
-}
-.three li {
   display: inline-block;
+  margin: 0 15px;
+  padding: 10px 30px;
+  font-family: 'PT Sans Caption', sans-serif;
+  color: #777777;
+  transition: .3s linear;
+  position: relative;
 }
-.three a {
-  padding: 1em;
-  display: block;
-  color: #74924C;
-  border-right: 1px solid #BAD78B;
-  background: rgba(186, 215, 139, .3);
+.menu-main a:before,
+.menu-main a:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F58262;
+  opacity: 0;
+  transition: .5s ease-in-out;
 }
-.three a:hover {background: #BAD78B}
-.four ul {
-  display: -webkit-flex; 
-  display: flex;
-  background: #FFD7A7;
-  padding-left: 0;
+.menu-main a:before {left: 5px;}
+.menu-main a:after {right: 5px;}
+.menu-main a.current:before,
+.menu-main a.current:after,
+.menu-main a:hover:before, 
+.menu-main a:hover:after {opacity: 1;}
+.menu-main a.current,
+.menu-main a:hover {color: #F58262;}
+@media(max-width:680px) {
+  .menu-main li {display: block;}
 }
-.four a {
-  padding: 1em;
-  display: block;
-  color: #9B4222;
-  border-right: 1px solid #FFAB51;
-  background: rgba(255, 171, 81, .3);
-}
-.four a:hover {background: #FFAB51}
 </style>
 </head>
 	<body>
 
 <h1 class="main">Методы защиты локальной сети</h1>
 <span class="news-date-time">23.07.2021</span>
-		<nav class="two">
-  <h2></h2>
-  <ul>
-    <li><a href="#"><i class="fa fa-home fa-fw"></i>Home</a></li>
-    <li><a href="#">Work</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Contact</a></li>
+		<nav class="top-menu">
+  <ul class="menu-main">
+    <li><a href="" class="current">Work</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">Blog</a></li>
+    <li><a href="">Contact</a></li>
   </ul>
 </nav>
 		<ol type="1">
